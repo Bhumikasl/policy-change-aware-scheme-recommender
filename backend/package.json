@@ -1,0 +1,76 @@
+{
+  "name": "scheme-monitor-backend",
+  "version": "1.0.0",
+  "description": "Detects new/updated Indian government schemes and notifies users",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "nodemon src/server.js",
+    "collect:once": "node src/scheduler/runOnce.js",
+    "backfill:eligibility": "node src/scripts/backfillEligibility.js",
+    "backfill:eligibility:llm": "node src/scripts/backfillEligibility.js --extract-llm",
+    "analyze:matches": "node src/scripts/analyzeMatches.js",
+    "verify:agents": "node scripts/verifyPolicyChangeAgent.js && node scripts/verifyPolicyImpactAgent.js",
+    "test": "jest --runInBand",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage",
+    "test:mini": "node scripts/miniJest.js",
+    "test:boundary": "node scripts/reproModelBoundary.js",
+    "verify:all": "npm run verify:agents && npm run test:mini && npm run test:boundary",
+    "demo:policy-change": "node scripts/demoPolicyChange.js",
+    "policy:retry": "node scripts/retryPolicyProcessing.js",
+    "evaluate": "node scripts/runEvaluation.js",
+    "evaluate:stale": "node scripts/runEvaluation.js --stale-only",
+    "evaluate:guards": "node scripts/runGuardEvaluation.js",
+    "evaluate:propagation": "node scripts/runPropagationEvaluation.js",
+    "evaluate:propagation:live": "node scripts/runPropagationEvaluation.js --live",
+    "evaluate:notification-cost": "node scripts/runNotificationCostEvaluation.js",
+    "evaluate:staleness": "node scripts/runStalenessAnalysis.js",
+    "evaluate:ranking": "node scripts/runRankingStabilityAnalysis.js",
+    "evaluate:matcher": "node scripts/runMatcherAgreement.js",
+    "evaluate:detection": "node scripts/runDetectionCompleteness.js",
+    "evaluate:exposure": "node scripts/runResponseSurfaceAudit.js",
+    "evaluate:surfaces": "node scripts/runSurfaceAgreement.js",
+    "evaluate:indexes": "node scripts/runIndexContract.js",
+    "evaluate:indexes:live": "node scripts/runIndexContract.js --live",
+    "evaluate:guards:live": "node scripts/runGuardEvaluation.js --live"
+  },
+  "dependencies": {
+    "@google/generative-ai": "^0.21.0",
+    "axios": "^1.7.7",
+    "bcryptjs": "^2.4.3",
+    "cheerio": "^1.0.0",
+    "cors": "^2.8.6",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "express-rate-limit": "^7.4.0",
+    "helmet": "^7.1.0",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.6.0",
+    "node-cron": "^4.6.0",
+    "nodemailer": "^9.0.3",
+    "winston": "^3.14.2"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "nodemon": "^3.1.4",
+    "supertest": "^7.0.0"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "testMatch": [
+      "<rootDir>/tests/**/*.test.js"
+    ],
+    "collectCoverageFrom": [
+      "src/**/*.js",
+      "!src/server.js",
+      "!src/config/**",
+      "!src/scheduler/**",
+      "!src/scripts/**",
+      "!src/collectors/mySchemeCollector.js"
+    ],
+    "setupFiles": [
+      "<rootDir>/jest.setup.js"
+    ]
+  }
+}

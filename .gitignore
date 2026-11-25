@@ -1,0 +1,42 @@
+# ---- SECRETS: never commit ----
+.env
+.env.*
+!.env.example
+
+# ---- dependencies ----
+node_modules/
+
+# ---- build output ----
+dist/
+build/
+coverage/
+# ---- runtime output ----
+logs/
+*.log
+npm-debug.log*
+
+# ---- pipeline state ----
+.backfill-checkpoint.json
+.backfill-checkpoint.json.tmp
+
+# ---- test / evaluation output ----
+coverage/
+evaluation/results/
+phase-p-review.json
+phase-p-results.json
+phase-p-final.json
+
+# ---- editor / OS ----
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# --- extra secret patterns ---
+*.pem
+*.key
+*.p12
+secrets/
+serviceAccount*.json
+.env.local
+.env.*.local

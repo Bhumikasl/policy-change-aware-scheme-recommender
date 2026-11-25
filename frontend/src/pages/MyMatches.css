@@ -1,0 +1,122 @@
+.matches-page {
+  padding: 40px 20px 80px;
+}
+
+.matches-header {
+  margin-bottom: 24px;
+}
+
+.matches-search-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.matches-search-form .search-input {
+  flex: 1 1 280px;
+}
+
+/* -------- Trust chip row -------- */
+.trust-chip-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 16px 0 12px;
+}
+
+.trust-chip {
+  border: 1px solid #d0d5dd;
+  background: #fff;
+  color: #344054;
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: background 120ms ease, border-color 120ms ease;
+}
+.trust-chip:hover { background: #f9fafb; }
+.trust-chip-active {
+  background: #1f2937;
+  color: #fff;
+  border-color: #1f2937;
+}
+.trust-chip-verified { border-color: #16a34a; color: #166534; }
+.trust-chip-verified.trust-chip-active { background: #16a34a; color: #fff; border-color: #16a34a; }
+.trust-chip-warn { border-color: #d97706; color: #92400e; }
+.trust-chip-warn.trust-chip-active { background: #d97706; color: #fff; border-color: #d97706; }
+.trust-chip-rules { border-color: #64748b; color: #475569; }
+.trust-chip-rules.trust-chip-active { background: #64748b; color: #fff; border-color: #64748b; }
+
+/* -------- Corner trust badge on scheme cards -------- */
+.trust-badge {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  padding: 3px 8px;
+  border-radius: 999px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  border: 1px solid transparent;
+  z-index: 1;
+}
+.trust-verified {
+  background: #dcfce7;
+  color: #166534;
+  border-color: #86efac;
+}
+.trust-warn {
+  background: #fef3c7;
+  color: #92400e;
+  border-color: #fcd34d;
+}
+.trust-rules {
+  background: #f1f5f9;
+  color: #475569;
+  border-color: #cbd5e1;
+}
+
+/* Ensure the card can host an absolutely-positioned badge */
+.scheme-card { position: relative; }
+
+/* Warn-flavoured docs/needs-info line */
+.doc-readiness-warn {
+  background: #fef3c7;
+  color: #92400e;
+  border-left: 3px solid #d97706;
+  padding: 6px 10px;
+  border-radius: 4px;
+  margin-top: 8px;
+  font-size: 0.85rem;
+}
+
+/* -------- Intent search bar -------- */
+.intent-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 20px 0 8px;
+  padding: 14px;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+}
+.intent-form .search-input { flex: 1 1 320px; }
+
+/* Funnel explainer line: "181 eligible · ranked · showing top 20" */
+.funnel-line {
+  font-size: 0.85rem;
+  color: #64748b;
+  margin: 4px 0 12px;
+}
+
+/* Relevance score pill on a card */
+.relevance-pill {
+  font-size: 0.72rem;
+  color: #475569;
+  background: #f1f5f9;
+  border: 1px solid #cbd5e1;
+  border-radius: 999px;
+  padding: 2px 7px;
+  margin-left: 6px;
+}

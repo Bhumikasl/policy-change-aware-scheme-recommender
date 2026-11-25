@@ -1,0 +1,225 @@
+/* =========================================================
+   NewlyEligibleSection.css
+   Styles for the "Newly eligible for you" additive section
+   on the My Matches page.
+
+   These classes are scoped to .newly-eligible-* and .neu-*
+   so they cannot conflict with any existing class.
+   ========================================================= */
+
+/* ---- Section wrapper ---- */
+.newly-eligible-section {
+  margin: 0 0 32px;
+  padding: 24px;
+  background: linear-gradient(135deg, #f0fdf4 0%, #ecfdf5 100%);
+  border: 1.5px solid #86efac;
+  border-radius: 14px;
+  box-shadow: 0 2px 12px rgba(22, 163, 74, 0.08);
+}
+
+/* ---- Section header ---- */
+.newly-eligible-header {
+  margin-bottom: 20px;
+}
+
+.newly-eligible-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #14532d;
+  margin: 0 0 6px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.newly-eligible-subtitle {
+  font-size: 0.88rem;
+  color: #166534;
+  margin: 0;
+}
+
+/* ---- Cards grid ---- */
+.newly-eligible-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 16px;
+}
+
+/* ---- Individual card ---- */
+.newly-eligible-card {
+  background: #fff;
+  border: 1px solid #bbf7d0;
+  border-left: 4px solid #22c55e;
+  border-radius: 10px;
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  box-shadow: 0 1px 6px rgba(22, 163, 74, 0.07);
+  transition: box-shadow 150ms ease, transform 150ms ease;
+}
+
+.newly-eligible-card:hover {
+  box-shadow: 0 4px 16px rgba(22, 163, 74, 0.14);
+  transform: translateY(-2px);
+}
+
+/* ---- Card badge row ---- */
+.newly-eligible-card-badge {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.neu-badge {
+  font-size: 0.72rem;
+  font-weight: 700;
+  background: #dcfce7;
+  color: #15803d;
+  border: 1px solid #86efac;
+  border-radius: 999px;
+  padding: 3px 10px;
+  white-space: nowrap;
+}
+
+.neu-ministry {
+  font-size: 0.72rem;
+  color: #6b7280;
+  background: #f3f4f6;
+  border: 1px solid #e5e7eb;
+  border-radius: 999px;
+  padding: 3px 8px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 180px;
+}
+
+/* ---- Card title ---- */
+.newly-eligible-card-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #111827;
+  margin: 0;
+  line-height: 1.4;
+}
+
+/* ---- Reason / explanation text ---- */
+.newly-eligible-card-reason {
+  font-size: 0.88rem;
+  color: #374151;
+  margin: 0;
+  line-height: 1.55;
+}
+
+.newly-eligible-card-explanation {
+  font-size: 0.85rem;
+  color: #166534;
+  background: #f0fdf4;
+  border: 1px solid #bbf7d0;
+  border-radius: 6px;
+  padding: 10px 12px;
+  line-height: 1.5;
+}
+
+/* ---- What changed (details/summary) ---- */
+.newly-eligible-card-changes {
+  font-size: 0.84rem;
+}
+
+.neu-changes-summary {
+  cursor: pointer;
+  color: #15803d;
+  font-weight: 600;
+  list-style: none;
+  user-select: none;
+}
+.neu-changes-summary::-webkit-details-marker { display: none; }
+.neu-changes-summary::before { content: "▶ "; font-size: 0.7rem; }
+details[open] .neu-changes-summary::before { content: "▼ "; }
+
+.neu-changes-list {
+  margin: 8px 0 0 0;
+  padding-left: 18px;
+  color: #374151;
+  line-height: 1.6;
+}
+.neu-changes-list li { margin-bottom: 2px; }
+
+/* ---- Benefits snippet ---- */
+.newly-eligible-card-benefits {
+  font-size: 0.83rem;
+  color: #374151;
+  background: #fafafa;
+  border: 1px solid #e5e7eb;
+  border-radius: 6px;
+  padding: 8px 10px;
+  line-height: 1.5;
+}
+
+/* ---- Action buttons ---- */
+.newly-eligible-card-actions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 2px;
+}
+
+.neu-view-link {
+  display: inline-block;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: #15803d;
+  text-decoration: none;
+  padding: 7px 16px;
+  border: 1.5px solid #22c55e;
+  border-radius: 6px;
+  transition: background 120ms, color 120ms;
+}
+.neu-view-link:hover {
+  background: #22c55e;
+  color: #fff;
+}
+
+.neu-apply-link {
+  display: inline-block;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: #fff;
+  background: #16a34a;
+  text-decoration: none;
+  padding: 7px 16px;
+  border: 1.5px solid #16a34a;
+  border-radius: 6px;
+  transition: background 120ms;
+}
+.neu-apply-link:hover {
+  background: #15803d;
+  border-color: #15803d;
+}
+
+/* ---- Date meta ---- */
+.newly-eligible-card-date {
+  font-size: 0.75rem;
+  color: #9ca3af;
+  margin: 0;
+}
+
+/* ---- Section footer meta ---- */
+.newly-eligible-meta {
+  margin: 16px 0 0;
+  font-size: 0.78rem;
+  color: #6b7280;
+  text-align: right;
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 600px) {
+  .newly-eligible-section {
+    padding: 16px;
+  }
+  .newly-eligible-cards {
+    grid-template-columns: 1fr;
+  }
+}

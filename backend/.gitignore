@@ -1,0 +1,26 @@
+# ---- SECRETS: never commit ----
+.env
+.env.*
+!.env.example
+
+# ---- dependencies ----
+node_modules/
+
+# ---- runtime output ----
+logs/
+*.log
+npm-debug.log*
+
+# ---- pipeline state ----
+.backfill-checkpoint.json
+.backfill-checkpoint.json.tmp
+
+# ---- test/eval output ----
+coverage/
+evaluation/results/
+
+# ---- editor / OS ----
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
